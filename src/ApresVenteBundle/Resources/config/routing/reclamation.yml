@@ -1,0 +1,24 @@
+Av_Reclamation_index:
+    path:     /
+    defaults: { _controller: "ApresVenteBundle:Reclamation:index" }
+    methods:  GET
+
+Av_Reclamation_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApresVenteBundle:Reclamation:show" }
+    methods:  GET
+
+Av_Reclamation_new:
+    path:     /new
+    defaults: { _controller: "ApresVenteBundle:Reclamation:new" }
+    methods:  [GET, POST]
+
+Av_Reclamation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApresVenteBundle:Reclamation:edit" }
+    methods:  [GET, POST]
+
+Av_Reclamation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApresVenteBundle:Reclamation:delete" }
+    methods:  DELETE

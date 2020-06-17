@@ -1,0 +1,47 @@
+{#  add this to my specific twig {% form_theme edit_form _self %} #}
+
+
+
+
+{# {% form_theme form "Form/bootstrapForm.html.twig" %} #}
+
+
+{% block form_row %}
+    {#  {{  dump() }}    #}
+    <div class="form-group">
+        {{ form_label(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endblock %}
+
+
+{% block text_widget %}
+   {#  smaller size →  <div class="col-sm-7"> #}
+        <input type="text" name="{{ full_name }}" id="{{ id }}" value="{{ value }}" class="form-control">
+{% endblock %}
+
+
+
+{% block checkbox_widget %}
+    <input type="checkbox"  checked="no" data-toggle="toggle" data-on="Ready" data-off="In Repair" data-onstyle="success" data-offstyle="danger">
+{% endblock checkbox_widget %}
+
+
+{% block email_widget %}
+    <input type="email" name="{{ full_name }}" id="{{ id }}" value="{{ value }}" class="form-control">
+{% endblock email_widget %}
+
+
+{% block password_widget %}
+    <input type="password" name="{{ full_name }}" id="{{ id }}" value="{{ value }}" class="form-control">
+{% endblock password_widget %}
+
+
+
+
+
+
+
+
+{# https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox  #}
+{# https://github.com/symfony/symfony/blob/master/src/Symfony/Bridge/Twig/Resources/views/Form/bootstrap_4_layout.html.twig  #}

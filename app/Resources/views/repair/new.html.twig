@@ -1,0 +1,22 @@
+{% extends 'FOSTemplate.html.twig' %}
+
+{% form_theme form "bootstrap_4_layout.html.twig" %}
+
+{% block body %}
+    <h1>Repair creation
+        <br/>
+        <a href="{{ path('Av_Repair_index') }}" class="btn btn-outline-dark pull-left" >Back to the list</a>
+    </h1>
+
+<br/><br/>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create"   class="btn btn-outline-success"  />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+
+        </li>
+    </ul>
+{% endblock %}

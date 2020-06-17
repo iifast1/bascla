@@ -1,0 +1,37 @@
+Av_Repair_index:
+    path:     /
+    defaults: { _controller: "ApresVenteBundle:Repair:index" }
+    methods:  GET
+
+Av_Repair_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApresVenteBundle:Repair:show" }
+    methods:  GET
+
+Av_Repair_new:
+    path:     /new
+    defaults: { _controller: "ApresVenteBundle:Repair:new" }
+    methods:  [GET, POST]
+
+Av_Repair_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApresVenteBundle:Repair:edit" }
+    methods:  [GET, POST]
+
+Av_Repair_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApresVenteBundle:Repair:delete" }
+    methods:  DELETE
+
+allmobile:
+    path:     /repairs/all
+    defaults: { _controller: "ApresVenteBundle:Repair:mobileall" }
+    methods:  GET
+newm:
+    path:     /addmobil/
+    defaults: { _controller: "ApresVenteBundle:Repair:new2" }
+    methods:
+new3:
+    path:     /deletemobil/
+    defaults: { _controller: "ApresVenteBundle:Repair:new3" }
+    methods:  GET

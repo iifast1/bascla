@@ -1,0 +1,69 @@
+
+#apres_vente:
+ #   resource: "@ApresVenteBundle/Resources/config/routing.yml"
+ #   prefix:   /Av
+
+bascla:
+    resource: "@basclaBundle/Resources/config/routing.yml"
+    prefix:   /bascla
+#http://localhost/Bascla-master/web/app_dev.php/bascla/home
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+################################################################################
+
+#from specific routing / her name was  : apres_vente_Av  :
+apres_vente_Av_Repair:
+    resource: "@ApresVenteBundle/Resources/config/routing/repair.yml"
+    prefix:   /Av/Repair/
+
+apres_vente_Av_Reclamation:
+    resource: "@ApresVenteBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /Av/Reclamation/
+
+
+
+
+
+
+#old_apres_vente_Av_Reclamation:
+#    resource: "@ApresVenteBundle/Resources/config/routing/reclamation.yml"
+#    prefix:   /Av/Reclamation/
+
+
+
+#login:
+ #   path: /login
+#register:
+#    path: /register
+
+
+
+# https://github.com/symfony/symfony/issues/27353#issuecomment-394998321
+
+#fos_user_security:
+#    resource: "
+#    @FOSUserBundle/Resources/config/routing/security.xml"
+
+    #fos_user_profile:
+    #    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    #   prefix: /profile
+
+
+#fos_user_register:
+ #   resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+  #  prefix: /register
+
+    #fos_user_resetting:
+    #resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    #prefix: /resetting
+
+    #fos_user_change_password:
+    #resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    #prefix: /profile
+

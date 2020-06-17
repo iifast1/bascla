@@ -1,0 +1,7 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% form_theme form "Form/bootstrapForm.html.twig" %}
+
+{% block fos_user_content %}
+{% include "@FOSUser/Registration/register_content.html.twig" %}
+{% endblock fos_user_content %}

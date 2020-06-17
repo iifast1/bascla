@@ -1,0 +1,15 @@
+apres_vente_Av_Repair:
+    resource: "@ApresVenteBundle/Resources/config/routing/repair.yml"
+    prefix:   /Av/Repair/
+
+apres_vente_homepage:
+    path:     /
+    defaults: { _controller: ApresVenteBundle:Default:index }
+#http://localhost/Bascla-master/web/app_dev.php/Av/
+
+
+apres_vente_Av_Reclamation:
+    resource: "@ApresVenteBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /Av/Reclamation/
+
+

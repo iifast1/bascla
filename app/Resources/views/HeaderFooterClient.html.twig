@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from demo.themefisher.com/focus/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014],  -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    {% block stylesheet %} {% endblock %}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
+
+
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+
+
+    <!--**********************************
+        Header start
+    ***********************************-->
+    <div class="header">
+        <div class="header-content">
+            <nav class="navbar navbar-expand">
+                <div class="collapse navbar-collapse justify-content-between">
+                    <div class="header-left">
+                        <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                            <div class="dropdown-menu p-0 m-0">
+                                <form>
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="navbar-nav header-right">
+                        <li class="nav-item dropdown notification_dropdown">
+                            <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                <i class="mdi mdi-bell"></i>
+                                <div class="pulse-css"></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <ul class="list-unstyled">
+                                    <li class="media dropdown-item">
+                                        <span class="success"><i class="ti-user"></i></span>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <span class="notify-time">3:20 am</span>
+                                    </li>
+                                    <li class="media dropdown-item">
+                                        <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                            </a>
+                                        </div>
+                                        <span class="notify-time">3:20 am</span>
+                                    </li>
+                                    <li class="media dropdown-item">
+                                        <span class="danger"><i class="ti-bookmark"></i></span>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <span class="notify-time">3:20 am</span>
+                                    </li>
+                                    <li class="media dropdown-item">
+                                        <span class="primary"><i class="ti-heart"></i></span>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                            </a>
+                                        </div>
+                                        <span class="notify-time">3:20 am</span>
+                                    </li>
+                                    <li class="media dropdown-item">
+                                        <span class="success"><i class="ti-image"></i></span>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <span class="notify-time">3:20 am</span>
+                                    </li>
+                                </ul>
+                                <a class="all-notification" href="#">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown header-profile">
+                            <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                <i class="mdi mdi-account"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="/Bascla-master/web/app_dev.php/login" class="dropdown-item">
+                                    <i class="icon-login"></i>
+                                    <span class="ml-2">Login </span>
+                                </a>
+
+                                <a href="/Bascla-master/web/app_dev.php/profile" class="dropdown-item">
+                                    <i class="icon-user"></i>
+                                    <span class="ml-2">Profile </span>
+                                </a>
+                                <a href="/Bascla-master/web/app_dev.php/register" class="dropdown-item">
+                                    <i class="icon-plus"></i>
+                                    <span class="ml-2">Register </span>
+                                </a>
+                                <a href="/Bascla-master/web/app_dev.php/logout" class="dropdown-item">
+                                    <i class="icon-logout"></i>
+                                    <span class="ml-2">Logout </span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--**********************************
+        Header end ti-comment-alt
+    ***********************************-->
+    <!--**********************************
+        Sidebar start
+    ***********************************-->
+    <div class="quixnav">
+        <div class="quixnav-scroll">
+            <ul class="metismenu" id="menu">
+
+                <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                </li> -->
+
+
+                <!--   pidev start
+
+                <li class="nav-label first">Admin Main Menu</li>
+                     this is for single span " dashboard only " !!!
+                <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                </li> -->
+                <!-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Admin - Apres Vente</span></a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{path('home')}}">Admin Reclamations</a></li>
+                        <li><a href="{{path('home')}}">Admin Repair</a></li>
+                        <li><a href="{{path('home')}}">Other...</a></li></ul>
+                </li>  -->
+                <!--   pidev end  / the right route name in specific routing -->
+
+
+
+
+
+                <li class="nav-label first">Client Main Menu</li>
+                <!-- this is for single span " dashboard only " !!!
+                <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                </li> -->
+                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                        class="icon icon-single-04"></i><span class="nav-text">Client - Apres Vente</span></a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{path('home')}}">Client Reclamation</a></li>
+                        <li><a href="{{path('home')}}">Client Repair</a></li>
+                        <li><a href="{{path('home')}}">Other...</a></li></ul>
+                </li>
+                <!--   pidev end  / the right route name in specific routing -->
+
+                <li class="nav-label first">Other Client Options ...</li>
+
+                <li><a href="{{ path('home') }}"><i class="icon icon-home"></i><span class="nav-text">Home Page</span></a>
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <!--**********************************
+        Sidebar end
+    ***********************************-->
+
+    {% block body %} {% endblock %}
+
+
+    <!--**********************************
+        Footer start
+    ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">MABT</a> 2020</p>
+        </div>
+    </div>
+    <!--**********************************
+        Footer end
+    ***********************************-->
+
+    <!--**********************************
+       Support ticket button start
+    ***********************************-->
+
+    <!--**********************************
+       Support ticket button end
+    ***********************************-->
+
+
+</div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+
+<!--**********************************
+    Scripts
+***********************************-->
+<!-- Required vendors -->
+<script src="{{ asset('vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('js/quixnav-init.js') }}"></script>
+<script src="{{ asset('js/custom.min.js') }}"></script>
+
+
+
+
+</body>
+
+
+</html>

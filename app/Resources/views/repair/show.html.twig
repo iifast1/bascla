@@ -1,0 +1,56 @@
+{% extends 'FOSTemplate.html.twig' %}
+
+{% form_theme delete_form "bootstrap_4_layout.html.twig" %}
+
+
+{% block body %}
+    <h1>Repair Details
+    <br/>
+        <a href="{{ path('Av_Repair_index') }}" class="btn btn-outline-dark" >Back to the list</a>
+
+    </h1>
+
+<a href="{{ path('Av_Repair_edit', { 'id': repair.id }) }}" style="margin:5px;" class="btn btn-outline-success pull-right" >Edit</a>
+
+
+{{ form_start(delete_form) }}
+<input type="submit" style="margin:5px;" class="btn btn-outline-danger pull-right" value="Delete">
+{{ form_end(delete_form) }}
+<br/>
+
+</div>
+<div class="card-body">
+    <div class="table-responsive ">
+        <table class="table header-border table-responsive-sm text-muted">
+
+
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ repair.id }}</td>
+            </tr>
+            <tr>
+                <th>Repair Description</th>
+                <td>{{ repair.repairDescription }}</td>
+            </tr>
+            <tr>
+                <th>Repair Status</th>
+                <td>{% if repair.repairStatus %}
+                        Yes &nbsp; &nbsp; <i class="fas fa-bicycle" style="font-size:25px;color:green" ></i>
+                        <i class="fas fa-check-circle" style="font-size:25px;color:green"></i>
+
+                    {% else %}
+
+                        No &nbsp; &nbsp;
+                        <i class="fas fa-bicycle" style="font-size:25px;color:red" ></i>
+                        <i class="fas fa-tools" style="font-size:25px;color:red"></i>
+
+                    {% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}
+
+

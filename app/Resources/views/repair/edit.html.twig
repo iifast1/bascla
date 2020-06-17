@@ -1,0 +1,33 @@
+{% extends 'FOSTemplate.html.twig' %}
+
+
+ {# form_theme edit_form '/Form/bootstrapForm.html.twig' %} #}
+{% form_theme edit_form "bootstrap_4_layout.html.twig" %}
+
+
+{% block body %}
+    <h1>Edit Repair
+    <br/>
+        <a href="{{ path('Av_Repair_index') }}" class="btn btn-outline-dark" >Back to the list</a>
+        <a href="{{ path('Av_Repair_show', { 'id': repair.id }) }}" class="btn btn-outline-info">show</a>
+
+    </h1>
+
+    <ul>
+        <li>
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+    <br/>
+        <input type="submit" style="margin:5px;" class="btn btn-outline-success pull-left" value="&emsp; Edit &emsp;" />
+    {{ form_end(edit_form) }}
+
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" style="margin:5px;" class="btn btn-outline-danger pull-left" value="&emsp; Delete &emsp;">
+            {{ form_end(delete_form) }}
+        </li>
+</ul>
+
+{% endblock %}
+

@@ -1,0 +1,101 @@
+{% extends 'FOSTemplate.html.twig' %}
+
+ {% form_theme edit_form "bootstrap_4_layout.html.twig" %}
+
+
+{# {% form_theme edit_form _self %}#}
+
+
+{% block body %}
+    <h1>Edit Reclamation
+
+        <br/>
+        <a href="{{ path('Av_Reclamation_index') }}" class="btn btn-outline-dark" >Back to the list</a>
+           <a href="{{ path('Av_Reclamation_show', { 'id': reclamation.id }) }}" class="btn btn-outline-info">show</a>
+    </h1>
+
+<ul>
+    <li>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+      <br/>
+        <input type="submit" style="margin:5px;" class="btn btn-outline-success pull-left" value="&emsp; Edit &emsp;" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" style="margin:5px;" class="btn btn-outline-danger pull-left" value="&emsp; Delete &emsp;">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
+
+{#    NEW EDIT WITH STARS  #}
+
+
+{% block form_row %}
+    {#  {{  dump() }}    #}
+    <div class="form-group">
+        {{ form_label(form) }}
+
+        {{ form_widget(form) }}
+    </div>
+{% endblock %}
+
+        {#
+
+      {% block text_widget %} #}
+          {#  smaller size →  <div class="col-sm-7"> #}
+
+  {#
+
+    <input type="text" name="{{ full_name }}" id="{{ id }}" value="{{ value }}" class="form-control">
+{% endblock %}
+
+
+    {% block radio_widget -%}
+        {%- set parent_label_class = parent_label_class|default(label_attr.class|default('')) -%}
+        {%- if 'radio-custom' in parent_label_class -%}
+            {%- set attr = attr|merge({class: (attr.class|default('') ~ ' custom-control-input')|trim}) -%}
+            <div class="custom-control custom-radio{{ 'radio-inline' in parent_label_class ? ' custom-control-inline' }}">
+                {{- form_label(form, null, { widget: parent() }) -}}
+            </div>
+        {%- else -%}
+            {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-check-input')|trim}) -%}
+            <div class="form-check{{ 'radio-inline' in parent_label_class ? ' form-check-inline' }}">
+                {{- form_label(form, null, { widget: parent() }) -}}
+            </div>
+        {%- endif -%}
+    {%- endblock radio_widget %}
+
+
+        {% block integer_widget %}
+            <div class="integer_widget" >
+                {% set type = type|default('number') %}
+                {{ block('form_widget_simple') }}
+            </div>
+        {% endblock %}
+
+        #}
+
+
+
+
+        {#
+{% block checkbox_widget %}
+    <input type="checkbox"  checked="no" data-toggle="toggle" data-on="Ready" data-off="In Repair" data-onstyle="success" data-offstyle="danger">
+{% endblock checkbox_widget %}
+#}
+
+
+
+
+
+
+
+

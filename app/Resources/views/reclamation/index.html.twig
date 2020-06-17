@@ -1,0 +1,105 @@
+{% extends 'FOSTemplate.html.twig' %}
+
+
+
+{% block body %}
+    <h1>Reclamations list</h1>
+
+
+
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Reclamations
+                <br/><br/>
+                <a href="{{ path('Av_Reclamation_new') }}" class="btn btn-outline-warning">Create a new reclamation</a>
+            </h4>
+
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table header-border table-responsive-sm text-muted">
+
+
+
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reclamationsubject</th>
+                <th>Quality</th>
+                <th>Disponibility</th>
+                <th>Services</th>
+                <th>Reclamationdescription</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td><a href="{{ path('Av_Reclamation_show', { 'id': reclamation.id }) }}">{{ reclamation.id }}</a></td>
+                <td>{{ reclamation.reclamationSubject }}</td>
+                <td> <!--  {{  reclamation.quality }}-->
+
+                    <span class="rating">
+                    {%  for i in 1..5 %}
+                        {% if i <= reclamation.quality  %}
+                            <i class="fas fa-star" style="color:yellow"></i>
+                        {% else %}
+                            <i class="far fa-star" style="color:orange"></i>
+                        {% endif %}
+                    {% endfor %}
+                         </span>
+
+                </td>
+                <td> <!-- {{ reclamation.disponibility }} -->
+
+                    <span class="rating">
+                    {%  for j in 1..5 %}
+                        {% if j <= reclamation.disponibility  %}
+                            <i class="fas fa-star" style="color:yellow"></i>
+                        {% else %}
+                            <i class="far fa-star" style="color:orange"></i>
+                        {% endif %}
+                    {% endfor %}
+                         </span>
+
+
+                </td>
+                <td> <!-- {{   reclamation.services   }} -->
+
+                    <span class="rating">
+                    {%  for k in 1..5 %}
+                        {% if k <= reclamation.services  %}
+                            <i class="fas fa-star" style="color:yellow"></i>
+                        {% else %}
+                            <i class="far fa-star" style="color:orange"></i>
+                        {% endif %}
+                    {% endfor %}
+                         </span>
+                </td>
+
+
+                <td>{{ reclamation.reclamationDescription }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('Av_Reclamation_show', { 'id': reclamation.id }) }}" class="btn btn-outline-info">show</a>
+
+                            <a href="{{ path('Av_Reclamation_edit', { 'id': reclamation.id }) }}" class="btn btn-outline-success">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+           </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'FOSTemplate.html.twig' %}
+
+
+
+
+{% block body %}
+    <h1>Repairs list</h1>
+
+
+
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Repairs
+                <br/><br/>
+                <a href="{{ path('Av_Repair_new') }}" class="btn btn-outline-warning">Create a new repair</a>
+            </h4>
+
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table header-border table-responsive-sm text-muted">
+
+
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Repair Description</th>
+                <th>Repair Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for repair in repairs %}
+            <tr>
+                <td><a href="{{ path('Av_Repair_show', { 'id': repair.id }) }}">{{ repair.id }}</a></td>
+                <td>{{ repair.repairDescription }}</td>
+                <td>{% if repair.repairStatus %}
+
+                        Yes &nbsp; &nbsp; <i class="fas fa-bicycle" style="font-size:25px;color:green" ></i>
+                        <i class="fas fa-check-circle" style="font-size:25px;color:green"></i>
+
+                    {% else %}
+
+                        No &nbsp; &nbsp;
+                        <i class="fas fa-bicycle" style="font-size:25px;color:red" ></i>
+                        <i class="fas fa-tools" style="font-size:25px;color:red"></i>
+
+                    {% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('Av_Repair_show', { 'id': repair.id }) }}" class="btn btn-outline-info">show</a>
+
+
+                            <a href="{{ path('Av_Repair_edit', { 'id': repair.id }) }}" class="btn btn-outline-success">edit</a>
+
+                          </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+                <!--     Bootstrap Toggle Button
+
+                <input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="In Repair" data-onstyle="success" data-offstyle="danger">
+
+
+                                         -->
+
+{% endblock %}
+
+
+
